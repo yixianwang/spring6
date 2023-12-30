@@ -191,6 +191,14 @@ User user2 = context.getBean(User.class);
 User user3 = context.getBean("user", User.class);
 ```
 #### DI by setter
+1. create class, define properties and having corresponding setter methods
+2. setup `bean-di.xml`
+```xml {filename = "resources/bean-di.xml"
+<bean id="book" class="com.mrtutu.spring6.iocxml.di.Book">
+    <property name="bname" value="SCI publish"></property>
+    <property name="author" value="Yixian"></property>
+</bean>
+```
 
 #### DI by constructor
 
