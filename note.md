@@ -286,6 +286,78 @@ p:sid="psid111" p:sname="yw" p:lessonList-ref="lessonList" p:s2t-ref="s2t">
 ```
 
 #### import property file from outside
+```xml{filename = "spring6-ioc-xml/pom.xml"}
+<!-- MySQL驱动 -->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.33</version>
+</dependency>
+
+<!-- 数据源 -->
+<dependency>
+    <groupId>com.alibaba</groupId>
+    <artifactId>druid</artifactId>
+    <version>1.2.16</version>
+</dependency>
+```
+
+```{filename = "resources/jdbc.properties"}
+jdbc.user=root
+jdbc.password=root
+jdbc.url=jdbc:mysql://localhost:3306/spring?serverTimezone=UTC
+jdbc.driver=com.mysql.cj.jdbc.Driver
+```
+
+```xml {filename="resources/bean-jdbc.xml"}
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <!--引入外部文件-->
+  <context:property-placeholder location="classpath:jdbc.properties"></context:property-placeholder>
+
+  <!--数据库数据注入-->
+  <bean id="druidDataSource" class="com.alibaba.druid.pool.DruidDataSource">
+    <property name="url" value="${jdbc.url}"/>
+    <property name="driverClassName" value="${jdbc.driver}"/>
+    <property name="username" value="${jdbc.user}"/>
+    <property name="password" value="${jdbc.password}"/>
+  </bean>
+</beans>
+```
+
+```java {filename="spring6-ioc-xml/src/main/java/com.mrtutu.spring6.iocxml.jdbc/TestJdbc"}
+package com.mrtutu.spring6.iocxml.jdbc;
+
+import com.alibaba.druid.pool.DruidDataSource;
+import org.junit.jupiter.api.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class TestJdbc {
+    @Test
+    public void demo1() {
+        DruidDataSource dataSource = new DruidDataSource();
+        dataSource.setUrl("jdbc:mysql://localhost:3306/spring?serverTimezone=UTC");
+        dataSource.setUsername("root");
+        dataSource.setPassword("root");
+        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+    }
+
+    @Test
+    public void demo2() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("bean-jdbc.xml");
+        DruidDataSource druidDataSource = context.getBean("druidDataSource", DruidDataSource.class);
+        System.out.println(druidDataSource.getUrl());
+    }
+}
+```
 
 #### bean scope
 
