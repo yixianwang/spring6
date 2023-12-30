@@ -5,24 +5,35 @@
 
     <!--object injection-->
     <beans>
-        <bean id="dept" class="com.mrtutu.spring6.iocxml.ditest.Dept">
-            <property name="dname" value="security"></property>
+<!--        <bean id="dept" class="com.mrtutu.spring6.iocxml.ditest.Dept">-->
+<!--            <property name="dname" value="security"></property>-->
+<!--        </bean>-->
+<!--        <bean id="emp" class="com.mrtutu.spring6.iocxml.ditest.Emp">-->
+<!--            <property name="age" value="28"></property>-->
+<!--            <property name="ename" value="Mike"></property>-->
+<!--            &lt;!&ndash;outside bean&ndash;&gt;-->
+<!--            <property name="dept" ref="dept"></property>-->
+<!--        </bean>-->
+<!--        <bean id="emp2" class="com.mrtutu.spring6.iocxml.ditest.Emp">-->
+<!--            <property name="age" value="98"></property>-->
+<!--            <property name="ename" value="Alex"></property>-->
+<!--            &lt;!&ndash;inner bean&ndash;&gt;-->
+<!--            <property name="dept">-->
+<!--                <bean id="dept2" class="com.mrtutu.spring6.iocxml.ditest.Dept">-->
+<!--                    <property name="dname" value="Payment"></property>-->
+<!--                </bean>-->
+<!--            </property>-->
+<!--        </bean>-->
+
+        <bean id="dept3" class="com.mrtutu.spring6.iocxml.ditest.Dept">
+            <property name="dname" value="Logistic"></property>
         </bean>
-        <bean id="emp" class="com.mrtutu.spring6.iocxml.ditest.Emp">
-            <property name="age" value="28"></property>
-            <property name="ename" value="Mike"></property>
-            <!--outside bean-->
-            <property name="dept" ref="dept"></property>
-        </bean>
-        <bean id="emp2" class="com.mrtutu.spring6.iocxml.ditest.Emp">
-            <property name="age" value="98"></property>
-            <property name="ename" value="Alex"></property>
-            <!--inner bean-->
-            <property name="dept">
-                <bean id="dept2" class="com.mrtutu.spring6.iocxml.ditest.Dept">
-                    <property name="dname" value="Payment"></property>
-                </bean>
-            </property>
+        <bean id="emp3" class="com.mrtutu.spring6.iocxml.ditest.Emp">
+            <property name="age" value="128"></property>
+            <property name="ename" value="Yixian"></property>
+            <!--sequential bean-->
+            <property name="dept" ref="dept3"></property>
+            <property name="dept.dname" value="Tech"></property>
         </bean>
     </beans>
 </beans>

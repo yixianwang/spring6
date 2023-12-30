@@ -9,4 +9,8 @@ public class Dept {
     public void setDname(String dname) {
         this.dname = dname;
     }
+
+    public String getDname() {
+        return dname;
+    }
 }

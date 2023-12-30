@@ -14,6 +14,10 @@ public class Emp {
         this.dept = dept;
     }
 
+    public Dept getDept() {
+        return dept;
+    }
+
     public void setEname(String ename) {
         this.ename = ename;
     }
