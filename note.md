@@ -285,7 +285,7 @@ p:sid="psid111" p:sname="yw" p:lessonList-ref="lessonList" p:s2t-ref="s2t">
 </bean>
 ```
 
-#### import property file from outside
+#### outside file injection
 ```xml{filename = "spring6-ioc-xml/pom.xml"}
 <!-- MySQL驱动 -->
 <dependency>
@@ -360,6 +360,15 @@ public class TestJdbc {
 ```
 
 #### bean scope
+```xml {filename="resources/bean-scope.xml"}
+<bean id="orders" class="com.mrtutu.spring6.iocxml.scope.Orders" scope="prototype"></bean>
+```
+
+|                    | Meaning                                                  | When to create object         |
+|--------------------|----------------------------------------------------------|-------------------------------|
+| singleton(default) | In IoC container, the object of bean is always singleton | when initialize IoC container |
+| prototype          | In IoC container, this bean has many objects             | when get bean                 | 
+
 
 #### bean lifetime
 
