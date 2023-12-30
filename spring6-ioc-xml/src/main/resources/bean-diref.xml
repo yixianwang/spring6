@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <util:list id="lessonList">
+        <ref bean="lessonone"></ref>
+        <ref bean="lessontwo"></ref>
+    </util:list>
+    <util:map id="s2t">
+        <entry>
+            <key>
+                <value>10010</value>
+            </key>
+            <ref bean="teacherone"></ref>
+        </entry>
+        <entry>
+            <key>
+                <value>10086</value>
+            </key>
+            <ref bean="teachertwo"></ref>
+        </entry>
+    </util:map>
+
+    <bean id="student" class="com.mrtutu.spring6.iocxml.dimap.Student">
+        <property name="sid" value="sid: 1"></property>
+        <property name="sname" value="Yixian"></property>
+        <property name="lessonList" ref="lessonList"></property>
+        <property name="s2t" ref="s2t"></property>
+    </bean>
+
+    <bean id="teacherone" class="com.mrtutu.spring6.iocxml.dimap.Teacher">
+        <property name="teacherName" value="T1"></property>
+        <property name="teacherId" value="tid: 1"></property>
+    </bean>
+    <bean id="teachertwo" class="com.mrtutu.spring6.iocxml.dimap.Teacher">
+        <property name="teacherName" value="T2"></property>
+        <property name="teacherId" value="tid: 2"></property>
+    </bean>
+
+    <bean id="lessonone" class="com.mrtutu.spring6.iocxml.dimap.Lesson">
+        <property name="lessonName" value="Math"></property>
+    </bean>
+    <bean id="lessontwo" class="com.mrtutu.spring6.iocxml.dimap.Lesson">
+        <property name="lessonName" value="OS"></property>
+    </bean>
+</beans>
