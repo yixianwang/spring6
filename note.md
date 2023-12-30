@@ -239,6 +239,15 @@ User user3 = context.getBean("user", User.class);
 2. inner bean
 3. sequential bean: `getter` is required
 ##### 2. array injection
+```xml {filename = "resources/bean-diarray.xml"}
+<property name="loves">
+  <array>
+    <value>coding</value>
+    <value>learning</value>
+    <value>eating</value>
+  </array>
+</property>
+```
 ##### 3. set injection
 ##### 4. map injection
 

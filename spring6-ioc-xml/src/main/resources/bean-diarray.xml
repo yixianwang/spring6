@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="dept" class="com.mrtutu.spring6.iocxml.ditest.Dept">
+        <property name="dname" value="Google"></property>
+    </bean>
+    <bean id="emp" class="com.mrtutu.spring6.iocxml.ditest.Emp">
+        <property name="ename" value="Yixian"></property>
+        <property name="age" value="130"></property>
+
+        <property name="dept" ref="dept"></property>
+
+        <property name="loves">
+            <array>
+                <value>coding</value>
+                <value>learning</value>
+                <value>eating</value>
+            </array>
+        </property>
+    </bean>
+</beans>
