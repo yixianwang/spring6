@@ -4,6 +4,8 @@ public class Book {
     private String bname;
     private String author;
 
+    private String others;
+
     public Book() {
         System.out.println("constructor without params executed");
     }
@@ -22,14 +24,18 @@ public class Book {
         this.author = author;
     }
 
-    @Override
-    public String toString() {
-        return "Book {" +
-                "bname='" + bname + '\'' +
-                ", author='" + author + '\'' +
-                '}';
+    public void setOthers(String others) {
+        this.others = others;
     }
 
+    @Override
+    public String toString() {
+        return "Book{" +
+                "bname='" + bname + '\'' +
+                ", author='" + author + '\'' +
+                ", others='" + others + '\'' +
+                '}';
+    }
 
     public static void main(String[] args) {
         // setter injection

@@ -7,6 +7,13 @@
     <bean id="book" class="com.mrtutu.spring6.iocxml.di.Book">
         <property name="bname" value="SCI publish"></property>
         <property name="author" value="Yixian"></property>
+<!--        <property name="others">-->
+<!--            <null/>-->
+<!--        </property>-->
+<!--        <property name="others" value="&lt;&gt;"></property>-->
+        <property name="others">
+            <value><![CDATA[a < b]]></value>
+        </property>
     </bean>
 
     <!--DI by constructor-->

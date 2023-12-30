@@ -210,4 +210,45 @@ User user3 = context.getBean("user", User.class);
 </bean>
 ```
 
+#### special value
+1. value
+```xml
+<!-- 使用value属性给bean的属性赋值时，Spring会把value属性的值看做字面量 -->
+<property name="name" value="张三"/>
+```
+2. null value
+```xml {filename = "resources/bean-di.xml"}
+<property name="others">
+    <null/>
+</property>
+```
+3. xml symbol
+```xml {filename = "resources/bean-di.xml"}
+<property name="others" value="&lt;&gt;"></property>
+```
+4. CDATA tag
+```xml {filename = "resources/bean-di.xml"}
+<property name="others">
+  <value><![CDATA[a < b]]></value>
+</property>
+```
+
+#### speical type injection
+##### 1. object injection
+##### 2. array injection
+##### 3. set injection
+##### 4. map injection
+
+#### p namespace
+
+#### import property file from outside
+
+#### bean scope
+
+#### bean lifetime
+
+#### FactoryBean
+
+#### auto match and load based on xml
+
 ### manage bean by annotation
