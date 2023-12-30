@@ -42,7 +42,7 @@ public void testUserObject() {
   }
 ```
 
-## Explain how object was created and saved
+## Explain how object was created and saved in background
 1. load bean.xml
 2. parse bean.xml
 3. get `id` and `class` from xml
@@ -138,3 +138,47 @@ public class ClassName {
   }
 }
 ```
+
+## IoC (Inversion of Control)
+> IoC is an idea of inversion of control, and DI is a specific implementation of IoC.
+- **Inversion** means: 
+  - Give the creation responsibilities of objects to the third-party container.
+  - Give the maintenance responsibilities of relationship of objects to the third-party container.
+### IoC Container
+Spring 通过 **IoC container** 来管理所有 
+- **Java 对象的实例化和初始化**， 
+- **控制对象与对象之间的依赖关系**。
+
+我们将由 IoC 容器管理的 Java 对象称为 Spring **Bean**，它与使用关键字 new 创建的 Java 对象没有任何区别。
+
+### DI (Dependency Injection)
+- **指Spring创建对象的过程中，将对象依赖属性通过配置进行注入**
+#### Approach 1: set injection
+#### Approach 2: constructor injection
+
+### How IoC is implemented in Spring
+- Spring 的 IoC 容器就是 IoC思想的一个落地的产品实现。
+- IoC容器中管理的组件也叫做 bean。
+- **在创建 bean 之前，首先需要创建IoC 容器。**
+- Spring 提供了IoC 容器的两种实现方式：
+
+**①BeanFactory**
+
+这是 IoC 容器的基本实现，是 Spring 内部使用的接口。面向 Spring 本身，不提供给开发人员使用。
+
+**②ApplicationContext**
+
+BeanFactory 的子接口，提供了更多高级特性。面向 Spring 的使用者，几乎所有场合都使用 ApplicationContext 而不是底层的 BeanFactory。
+
+**ApplicationContext的主要实现类**
+
+| 类型名                          | 简介                                                         |
+| ------------------------------- | ------------------------------------------------------------ |
+| ClassPathXmlApplicationContext  | 通过读取类路径下的 XML 格式的配置文件创建 IOC 容器对象       |
+| FileSystemXmlApplicationContext | 通过文件系统路径读取 XML 格式的配置文件创建 IOC 容器对象     |
+| ConfigurableApplicationContext  | ApplicationContext 的子接口，包含一些扩展方法 refresh() 和 close() ，让 ApplicationContext 具有启动、关闭和刷新上下文的能力。 |
+| WebApplicationContext           | 专门为 Web 应用准备，基于 Web 环境创建 IOC 容器对象，并将对象引入存入 ServletContext 域中。 |
+
+### manage bean by xml
+
+### manage bean by annotation
