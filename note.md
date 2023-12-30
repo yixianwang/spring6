@@ -235,7 +235,8 @@ User user3 = context.getBean("user", User.class);
 
 #### speical type injection
 ##### 1. object injection
-1. outside bean
+1. outside bean: use `ref` instead of `value`
+2. 2. inner bean
 ##### 2. array injection
 ##### 3. set injection
 ##### 4. map injection
