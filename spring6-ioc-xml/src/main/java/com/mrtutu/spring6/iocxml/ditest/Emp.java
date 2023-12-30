@@ -7,5 +7,18 @@ public class Emp {
 
     public void work() {
         System.out.println(ename + "Emp is working......" + age);
+        dept.info();
+    }
+
+    public void setDept(Dept dept) {
+        this.dept = dept;
+    }
+
+    public void setEname(String ename) {
+        this.ename = ename;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }

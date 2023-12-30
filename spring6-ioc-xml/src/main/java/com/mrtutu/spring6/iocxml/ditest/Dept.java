@@ -5,4 +5,8 @@ public class Dept {
     public void info() {
         System.out.println("Department name: " + dname);
     }
+
+    public void setDname(String dname) {
+        this.dname = dname;
+    }
 }
