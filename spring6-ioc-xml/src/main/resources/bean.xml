@@ -3,5 +3,11 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!--1. get bean example-->
     <bean id="user" class="com.mrtutu.spring6.iocxml.User"></bean>
+    <bean id="user1" class="com.mrtutu.spring6.iocxml.User"></bean>
+
+    <!--2. one interface get implementations-->
+    <bean id="userDaoImpl" class="com.mrtutu.spring6.iocxml.bean.UserDaoImpl"></bean>
+    <bean id="personDaoImpl" class="com.mrtutu.spring6.iocxml.bean.PersonDaoImpl"></bean>
 </beans>

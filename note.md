@@ -180,5 +180,19 @@ BeanFactory 的子接口，提供了更多高级特性。面向 Spring 的使用
 | WebApplicationContext           | 专门为 Web 应用准备，基于 Web 环境创建 IOC 容器对象，并将对象引入存入 ServletContext 域中。 |
 
 ### manage bean by xml
+#### get bean
+```java {filename = "package/TestUser"}
+ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
+// get bean by id
+User user1 = (User) context.getBean("user");
+// get bean by class
+User user2 = context.getBean(User.class);
+// get bean by id && class
+User user3 = context.getBean("user", User.class);
+```
+#### DI by setter
+
+#### DI by constructor
+
 
 ### manage bean by annotation
