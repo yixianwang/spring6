@@ -1,10 +1,16 @@
 package com.mrtutu.spring6;
 
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class TestUser {
+
+    // logger
+    private Logger logger = LoggerFactory.getLogger(TestUser.class);
+
     @Test
     public void testUserObject() {
         // load spring conf file, creating object
@@ -17,6 +23,9 @@ public class TestUser {
 
         // call method of object
         user.add();
+
+        // use logger
+        logger.info("### this is info from logger!");
     }
 
     @Test
