@@ -5,9 +5,11 @@ public class Book {
     private String author;
 
     public Book() {
+        System.out.println("constructor without params executed");
     }
 
     public Book(String bname, String author) {
+        System.out.println("constructor with params executed");
         this.bname = bname;
         this.author = author;
     }

@@ -201,6 +201,13 @@ User user3 = context.getBean("user", User.class);
 ```
 
 #### DI by constructor
-
+1. create class, define properties and having corresponding constructor with params
+2. setup `bean-di.xml`
+```xml {filename = "resources/bean-di.xml"
+<bean id="bookCon" class="com.mrtutu.spring6.iocxml.di.Book">
+    <constructor-arg name="bname" value="IEEE publish"></constructor-arg>
+    <constructor-arg name="author" value="Yixian"></constructor-arg>
+</bean>
+```
 
 ### manage bean by annotation

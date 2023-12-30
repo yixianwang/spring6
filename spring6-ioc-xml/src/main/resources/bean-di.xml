@@ -3,8 +3,15 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!--DI by setter-->
     <bean id="book" class="com.mrtutu.spring6.iocxml.di.Book">
         <property name="bname" value="SCI publish"></property>
         <property name="author" value="Yixian"></property>
+    </bean>
+
+    <!--DI by constructor-->
+    <bean id="bookCon" class="com.mrtutu.spring6.iocxml.di.Book">
+        <constructor-arg name="bname" value="IEEE publish"></constructor-arg>
+        <constructor-arg name="author" value="Yixian"></constructor-arg>
     </bean>
 </beans>
