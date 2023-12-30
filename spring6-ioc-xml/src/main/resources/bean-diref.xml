@@ -2,6 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/util
        http://www.springframework.org/schema/util/spring-util.xsd
        http://www.springframework.org/schema/beans
@@ -25,6 +26,11 @@
             <ref bean="teachertwo"></ref>
         </entry>
     </util:map>
+
+    <!--p namespace injection-->
+    <bean id="studentp" class="com.mrtutu.spring6.iocxml.dimap.Student"
+    p:sid="psid111" p:sname="yw" p:lessonList-ref="lessonList" p:s2t-ref="s2t">
+    </bean>
 
     <bean id="student" class="com.mrtutu.spring6.iocxml.dimap.Student">
         <property name="sid" value="sid: 1"></property>

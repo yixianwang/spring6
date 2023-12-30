@@ -276,8 +276,14 @@ User user3 = context.getBean("user", User.class);
     </map>
 </property>
 ```
+#### p namespace injection
+```xml {filename = "resources/bean-diref.xml"}
+xmlns:p="http://www.springframework.org/schema/p"
 
-#### p namespace
+<bean id="studentp" class="com.mrtutu.spring6.iocxml.dimap.Student"
+p:sid="psid111" p:sname="yw" p:lessonList-ref="lessonList" p:s2t-ref="s2t">
+</bean>
+```
 
 #### import property file from outside
 
