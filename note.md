@@ -229,7 +229,7 @@ User user3 = context.getBean("user", User.class);
 4. CDATA tag
 ```xml {filename = "resources/bean-di.xml"}
 <property name="others">
-  <value><![CDATA[a < b]]></value>
+    <value><![CDATA[a < b]]></value>
 </property>
 ```
 
@@ -241,15 +241,41 @@ User user3 = context.getBean("user", User.class);
 ##### 2. array injection
 ```xml {filename = "resources/bean-diarray.xml"}
 <property name="loves">
-  <array>
-    <value>coding</value>
-    <value>learning</value>
-    <value>eating</value>
-  </array>
+    <array>
+        <value>coding</value>
+        <value>learning</value>
+        <value>eating</value>
+    </array>
 </property>
 ```
 ##### 3. set injection
+```xml {filename = "resources/bean-dilist.xml"}
+<property name="empList">
+    <list>
+        <ref bean="empone"></ref>
+        <ref bean="emptwo"></ref>
+    </list>
+</property>
+```
 ##### 4. map injection
+```xml {filename = "resources/bean-dilist.xml"}
+<property name="s2t">
+    <map>
+        <entry>
+            <key>
+                <value>t1t1t1</value>
+            </key>
+            <ref bean="teacherone"></ref>
+        </entry>
+        <entry>
+            <key>
+                <value>t2t2t2</value>
+            </key>
+            <ref bean="teachertwo"></ref>
+        </entry>
+    </map>
+</property>
+```
 
 #### p namespace
 
