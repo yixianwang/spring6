@@ -369,8 +369,15 @@ public class TestJdbc {
 | singleton(default) | In IoC container, the object of bean is always singleton | when initialize IoC container |
 | prototype          | In IoC container, this bean has many objects             | when get bean                 | 
 
-
 #### bean lifetime
+1. bean对象创建（调用无参构造器）
+2. 给bean对象设置属性
+3. bean的后置处理器（初始化之前）
+4. bean对象初始化（需在配置bean时指定初始化方法）
+5. bean的后置处理器（初始化之后）
+6. bean对象就绪可以使用
+7. bean对象销毁（需在配置bean时指定销毁方法）
+8. IOC容器关闭
 
 #### FactoryBean
 
