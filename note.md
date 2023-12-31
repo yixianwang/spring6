@@ -388,6 +388,7 @@ public class TestJdbc {
 - it's always used for integrating third party framework.
 
 #### auto match and load based on xml
-- controller call service, service call dao
+- autowire by type: must be unique
+- autowire by name: bean **id** must be euqal to property name
 
 ### manage bean by annotation

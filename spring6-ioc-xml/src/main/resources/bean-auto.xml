@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--auto load and match by type-->
+<!--    <bean id="userController" class="com.mrtutu.spring6.iocxml.auto.controller.UserController" autowire="byType">-->
+
+<!--    </bean>-->
+<!--    <bean id="userService" class="com.mrtutu.spring6.iocxml.auto.service.UserServiceImpl" autowire="byType">-->
+
+<!--    </bean>-->
+<!--    <bean id="userDao" class="com.mrtutu.spring6.iocxml.auto.dao.UserDaoImpl">-->
+
+<!--    </bean>-->
+
+    <!--auto load and match by name-->
+    <bean id="userController" class="com.mrtutu.spring6.iocxml.auto.controller.UserController" autowire="byName">
+
+    </bean>
+    <bean id="userService" class="com.mrtutu.spring6.iocxml.auto.service.UserServiceImpl" autowire="byName">
+
+    </bean>
+    <bean id="userDao" class="com.mrtutu.spring6.iocxml.auto.dao.UserDaoImpl">
+
+    </bean>
+</beans>
