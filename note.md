@@ -385,8 +385,9 @@ public class TestJdbc {
 ```
 
 #### FactoryBean
-- always use for integrate third party framework
+- it's always used for integrating third party framework.
 
 #### auto match and load based on xml
+- controller call service, service call dao
 
 ### manage bean by annotation
