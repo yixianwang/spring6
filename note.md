@@ -423,6 +423,7 @@ Spring 提供了以下多个注解，这些注解可以直接标注在 Java 类�
 | @Controller | 该注解通常作用在控制层（如SpringMVC 的 Controller），用于将控制层的类标识为 Spring 中的 Bean，其功能与 @Component 相同。 |
 
 #### @Autowired injection
-- `byType` is default
+> `byType` is default
+1. on property
 
 #### @Resource injection
