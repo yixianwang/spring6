@@ -385,6 +385,7 @@ public class TestJdbc {
 ```
 
 #### FactoryBean
+- always use for integrate third party framework
 
 #### auto match and load based on xml
 
