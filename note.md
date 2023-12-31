@@ -379,6 +379,11 @@ public class TestJdbc {
 7. bean对象销毁（需在配置bean时指定销毁方法）
 8. IOC容器关闭
 
+```xml {filename="resources/bean-lifecycle.xml"}
+<!-- bean的后置处理器要放入IOC容器才能生效 -->
+<bean id="myBeanPost" class="com.mrtutu.spring6.iocxml.lifecycle.MyBeanPost"/>
+```
+
 #### FactoryBean
 
 #### auto match and load based on xml

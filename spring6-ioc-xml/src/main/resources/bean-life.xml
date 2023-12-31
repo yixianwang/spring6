@@ -6,4 +6,7 @@
     <bean id="user" class="com.mrtutu.spring6.iocxml.lifecycle.User" scope="singleton" init-method="initMethod" destroy-method="destroyMethod">
         <property name="name" value="Yixian"></property>
     </bean>
+
+    <!-- bean的后置处理器要放入IOC容器才能生效 -->
+    <bean id="myBeanPost" class="com.mrtutu.spring6.iocxml.lifecycle.MyBeanPost"/>
 </beans>
